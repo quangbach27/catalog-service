@@ -4,3 +4,22 @@ server:
 spring:
   application:
     name: catalog-service
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
+  datasource:
+    username: user
+    password: password
+    url: jdbc:postgresql://localhost:5432/polardb_catalog
+    hikari:
+      connection-timeout: 2000
+      maximum-pool-size: 5
+  sql:
+    init:
+      mode: always
+
+
+#polar:
+#  greeting: Welcome to the local book catalog

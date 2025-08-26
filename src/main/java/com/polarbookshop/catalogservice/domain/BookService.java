@@ -45,4 +45,8 @@ public class BookService {
                 })
                 .orElseGet(() -> addBookToCatalog(book));
     }
+    
+    public void removeBookFromCatalog(String isbn) {
+        this.bookRepository.deleteByIsbn(isbn);
+    }
 }

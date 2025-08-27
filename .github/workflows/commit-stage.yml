@@ -29,6 +29,18 @@ jobs:
       - name: Build, unit tests and integration tests
         run: ./mvnw clean verify
 
+      - name: Setup tools
+        uses: alexellis/setup-arkade@v3
+
+      - name: Install tools
+        uses: alexellis/arkade-get@master
+        with:
+          kubeconform: latest
+
+      - name: Validate Kubernetes manifests
+        run: |
+          kubeconform --strict k8s
+
       - name: Cache Maven artifacts
         uses: actions/upload-artifact@v4
         with:

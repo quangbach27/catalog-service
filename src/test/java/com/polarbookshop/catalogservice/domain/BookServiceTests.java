@@ -17,7 +17,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 import static org.assertj.core.api.BDDAssertions.thenThrownBy;
 
 @ExtendWith(MockitoExtension.class)
-class BookServiceTest {
+class BookServiceTests {
     @Mock
     private BookRepository bookRepository;
     
